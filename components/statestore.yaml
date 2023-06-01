@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: nw.store.jobs
+spec:
+  type: state.azure.cosmosdb
+  version: v1
+  metadata:
+  - name: url
+    value: https://localhost:8081
+  - name: masterKey
+    secretKeyRef:
+      name: cosmosKey
+      key: cosmosKey
+  - name: database
+    value: NwJobs
+  - name: collection
+    value: JobStates
+auth:
+  secretStore: local-secrets

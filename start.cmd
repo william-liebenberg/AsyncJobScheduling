@@ -1,0 +1,2 @@
+start "jobs-api"		dapr run --app-id jobs-api --app-port 7104 --app-ssl --components-path ./components/ -- dotnet run -lp https --project ./JobScheduler/JobScheduler.csproj
+start "microservice-x"	dapr run --app-id microservice-x --app-port 7020 --app-ssl --components-path ./components/ -- dotnet run -lp https --project ./MicroserviceX/MicroserviceX.csproj
